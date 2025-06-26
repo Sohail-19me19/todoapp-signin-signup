@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="loading">
+      <img src="./images/loading.gif" alt="" />
+    </div>
+    <div class="container" id="goToPage">
+      <div class="userData">
+        <img src="./images/profile.png" id="profilePic" />
+        <div>
+          <h1 id="nameuser"></h1>
+          <h4 id="email"></h4>
+        </div>
+        <button id="logout">Logout</button>
+      </div>
+      <div class="todo-app">
+        <div>
+          <h1><img src="images/icon.webp" alt="notebook&Pencil" /> ToDo App</h1>
+        </div>
+
+        <div class="tasks-add">
+          <input type="text" id="Activity" placeholder="add tasks" />
+          <button id="Add">Add</button>
+          <button id="update">Update</button>
+        </div>
+        <div class="tools">
+          <input type="checkbox" id="checkBox" />
+          <b>Select All</b>
+          <button id="deleteAll">Delete</button>
+        </div>
+
+        <ul id="task-container">
+          <!-- <li class="checked">task1</li>
+                <li>taks2</li>
+                <li>task3</li> -->
+        </ul>
+      </div>
+    </div>
+
+    <div class="popup" id="popUp">
+      <img src="../images.png" />
+      <h2>Login Successfull</h2>
+      <p>You have been loginned successfully</p>
+      <button id="ok" onclick="closePopup()">Ok</button>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-database-compat.js"></script>
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyAgWD-w7rUQqAXCpbPJW-uBnZecvEQGtws",
+        authDomain: "fir-auth-practice-4654a.firebaseapp.com",
+        projectId: "fir-auth-practice-4654a",
+        storageBucket: "fir-auth-practice-4654a.appspot.com",
+        messagingSenderId: "786823000806",
+        appId: "1:786823000806:web:1a9ca152789b10f2bec127",
+        databaseURL:
+          "https://fir-auth-practice-4654a-default-rtdb.firebaseio.com",
+      };
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>

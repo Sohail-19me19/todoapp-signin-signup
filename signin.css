@@ -1,0 +1,119 @@
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(rgb(131, 56, 236),rgb(58, 134, 255));
+    padding: 10px;
+}
+
+.login{
+    width: 100%;
+    max-width: 540px;
+    background: white;
+    margin: 60px auto 20px;
+    padding: 30px 40px 25px;
+    border-radius: 10px;
+}
+
+h1{
+    text-align: center;
+    margin: 20px auto 0;
+    border-radius: 10px;
+    background-color: white;
+    color: royalblue;
+    text-shadow: rgb(58, 134, 255) 2px 2px 3px;
+    padding: 10px ;
+    font-size: 40px;
+    
+}
+
+input{
+    margin: 30px auto 0;
+    display: block;
+    width: 400px;
+    padding: 15px;
+    font-size: 25px;
+    border-radius: 10px;
+    border: 2px solid #222222;
+}
+input:focus{
+    border: 2px solid black;
+    box-shadow: #222222 2px 2px 3px;
+    outline: none;
+}
+
+button{
+    padding: 20px;
+    margin: 20px auto 0;
+    display: block;
+    font-size: 20px;
+    width: 200px;
+    border-radius: 5px;
+    background-color: royalblue;
+    outline: none;
+    border: none;
+    color: white;
+}
+button:hover{
+    box-shadow: rgb(58, 134, 255) 3px 3px 5px;
+}
+a{
+    display: block;
+    margin: 20px auto 0;
+    text-align: center;
+}
+
+
+.Errpopup{
+    width: 550px;
+    background: #fff;
+    border-radius: 6px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0.1);
+    text-align: center;
+    padding: 0 30px 30px;
+    color: #333;
+    border: 5px solid rgb(214, 19, 35);
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+}
+.openErrpopup{
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%,-50%) scale(1);
+}
+.Errpopup img{
+    width: 50px;
+    border-radius: 50%;
+    margin: 0 0 -80px -280px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.Errpopup h2{
+    font-size: 38px;
+    font-weight: 500;
+    margin: 30px 0 10px;
+
+}
+.Errpopup p {
+    margin-top: 50px;
+}
+.Errpopup button{
+    width: 100%;
+    margin-top: 50px;
+    padding: 10px 0;
+    background-color:rgb(214, 19, 35);
+    color: white;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+}

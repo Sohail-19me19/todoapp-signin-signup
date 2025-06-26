@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="signin.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login">
+            <h1>Login In Account</h1>
+            <input type="text"  id="email" placeholder="Email">
+            <input type="password"  id="password" placeholder="password">
+            <button id="signin">Log In</button> 
+            <a href="#" onclick="window.location.href = 'index.html' ">Create Account</a>   
+        </div>
+    </div>
+
+    <div class="Errpopup" id="Errpopup">
+        <img src="images (1).png">
+        <h2>Caught Error!</h2>
+        <p id="error"></p>
+        <button id="tryAgain" onclick="closeError()">Try again!</button>
+    </div>
+
+    <script src="login.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-database-compat.js"></script>
+    <script>
+       const firebaseConfig = {
+    apiKey: "AIzaSyAgWD-w7rUQqAXCpbPJW-uBnZecvEQGtws",
+    authDomain: "fir-auth-practice-4654a.firebaseapp.com",
+    projectId: "fir-auth-practice-4654a",
+    storageBucket: "fir-auth-practice-4654a.appspot.com",
+    messagingSenderId: "786823000806",
+    appId: "1:786823000806:web:1a9ca152789b10f2bec127",
+    databaseURL: "https://fir-auth-practice-4654a-default-rtdb.firebaseio.com"
+  };
+        firebase.initializeApp(firebaseConfig);
+    </script>
+</body>
+</html>

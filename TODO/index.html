@@ -3,51 +3,102 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ToDo App</title>
+    <title>Todo App - Organize Your Life</title>
     <link rel="stylesheet" href="style.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   </head>
   <body>
     <div id="loading">
-      <img src="./images/loading.gif" alt="" />
+      <div class="loading-spinner">
+        <i class="fas fa-spinner fa-spin"></i>
+        <p>Loading your tasks...</p>
+      </div>
     </div>
+    
     <div class="container" id="goToPage">
       <div class="userData">
         <img src="./images/profile.png" id="profilePic" />
-        <div>
+        <div class="user-info">
           <h1 id="nameuser"></h1>
           <h4 id="email"></h4>
         </div>
-        <button id="logout">Logout</button>
+        <button id="logout">
+          <i class="fas fa-sign-out-alt"></i>
+          Logout
+        </button>
       </div>
+      
       <div class="todo-app">
-        <div>
-          <h1><img src="images/icon.webp" alt="notebook&Pencil" /> ToDo App</h1>
+        <div class="app-header">
+          <h1>
+            <i class="fas fa-tasks"></i>
+            Todo App
+          </h1>
+          <p>Organize your tasks efficiently</p>
         </div>
 
         <div class="tasks-add">
-          <input type="text" id="Activity" placeholder="add tasks" />
-          <button id="Add">Add</button>
-          <button id="update">Update</button>
+          <div class="input-wrapper">
+            <i class="fas fa-plus"></i>
+            <input type="text" id="Activity" placeholder="Add a new task..." />
+          </div>
+          <button id="Add">
+            <i class="fas fa-plus"></i>
+            Add
+          </button>
+          <button id="update" style="display: none;">
+            <i class="fas fa-edit"></i>
+            Update
+          </button>
         </div>
+        
         <div class="tools">
-          <input type="checkbox" id="checkBox" />
-          <b>Select All</b>
-          <button id="deleteAll">Delete</button>
+          <div class="select-all">
+            <input type="checkbox" id="checkBox" />
+            <label for="checkBox">Select All</label>
+          </div>
+          <button id="deleteAll">
+            <i class="fas fa-trash"></i>
+            Delete Selected
+          </button>
         </div>
 
-        <ul id="task-container">
-          <!-- <li class="checked">task1</li>
-                <li>taks2</li>
-                <li>task3</li> -->
-        </ul>
+        <div class="tabs">
+          <button class="tab-btn active" data-tab="pending">
+            <i class="fas fa-clock"></i>
+            Pending
+          </button>
+          <button class="tab-btn" data-tab="completed">
+            <i class="fas fa-check-circle"></i>
+            Completed
+          </button>
+        </div>
+
+        <div class="task-sections">
+          <div class="task-section active" id="pending-section">
+            <h3>Pending Tasks</h3>
+            <ul id="task-container">
+              <!-- Tasks will be added here -->
+            </ul>
+          </div>
+          
+          <div class="task-section" id="completed-section">
+            <h3>Completed Tasks</h3>
+            <ul id="completed-container">
+              <!-- Completed tasks will be added here -->
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="popup" id="popUp">
-      <img src="../images.png" />
-      <h2>Login Successfull</h2>
-      <p>You have been loginned successfully</p>
-      <button id="ok" onclick="closePopup()">Ok</button>
+      <div class="success-content">
+        <i class="fas fa-check-circle"></i>
+        <h2>Welcome Back!</h2>
+        <p>You have been logged in successfully</p>
+        <button id="ok" onclick="closePopup()">Get Started</button>
+      </div>
     </div>
 
     <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-app-compat.js"></script>

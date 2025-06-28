@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login - Todo App</title>
+    <title>Sign Up - Todo App</title>
     <link rel="stylesheet" href="main.css" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -12,14 +12,31 @@
   </head>
   <body>
     <div id="userData">
-      <div id="CreateAccount" class="login-container">
-        <div class="login-header">
-          <i class="fas fa-tasks"></i>
-          <h1>Welcome Back</h1>
-          <p>Sign in to continue to your Todo App</p>
+      <div id="CreateAccount" class="signup-container">
+        <div class="signup-header">
+          <i class="fas fa-user-plus"></i>
+          <h1>Create Account</h1>
+          <p>Join us and start organizing your tasks</p>
         </div>
 
-        <form class="login-form">
+        <form class="signup-form">
+          <div class="input-group">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Username" id="username" required />
+          </div>
+
+          <div class="input-group">
+            <i class="fas fa-birthday-cake"></i>
+            <input
+              type="number"
+              placeholder="Age"
+              id="age"
+              min="13"
+              max="120"
+              required
+            />
+          </div>
+
           <div class="input-group">
             <i class="fas fa-envelope"></i>
             <input type="email" placeholder="Email" id="email" required />
@@ -35,9 +52,9 @@
             />
           </div>
 
-          <button type="button" id="signin" class="login-btn">
-            <i class="fas fa-sign-in-alt"></i>
-            Sign In
+          <button type="button" id="signup" class="signup-btn">
+            <i class="fas fa-user-plus"></i>
+            Create Account
           </button>
 
           <div class="divider">
@@ -50,9 +67,18 @@
           </button>
         </form>
 
-        <div class="signup-link">
-          <p>Don't have an account? <a href="signup.html">Create Account</a></p>
+        <div class="login-link">
+          <p>Already have an account? <a href="index.html">Sign In</a></p>
         </div>
+      </div>
+    </div>
+
+    <div class="popup" id="popUp">
+      <div class="success-content">
+        <i class="fas fa-check-circle"></i>
+        <h2>Success!</h2>
+        <p>Your account has been created successfully</p>
+        <button id="ok" onclick="closePopup()">Continue</button>
       </div>
     </div>
 
@@ -81,6 +107,6 @@
       };
       firebase.initializeApp(firebaseConfig);
     </script>
-    <script src="login.js"></script>
+    <script src="signin.js"></script>
   </body>
 </html>
